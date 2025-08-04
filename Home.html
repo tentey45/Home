@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paragon University Welcome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Background */
+    .background {
+      background-image: url('paragonII.jpg'); /* Replace with your image */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: white;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px 30px;
+    }
+
+    .navbar h1 {
+      font-size: 24px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar ul li {
+      display: inline;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Welcome & Apply Now */
+    .center-text {
+      text-align: center;
+      margin-top: 100px;
+      z-index: 2;
+    }
+
+    .message {
+      font-size: 4rem;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px 40px;
+      border-radius: 20px;
+      display: inline-block;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .sub-message {
+      margin-top: 10px;
+      font-size: 1rem;
+      animation: scroll-text 10s linear infinite;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .show {
+      opacity: 1;
+    }
+
+    /* Promo Text */
+    .promo {
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Scrolling Text Animation */
+    @keyframes scroll-text {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Logo Image */
+    .logo {
+      width: 100px;
+      margin: 0 auto;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="background">
+
+    <!-- Navigation -->
+    <div class="navbar">
+      <h1>Paragon University</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="#">Learn More</a></li>
+      </ul>
+    </div>
+
+    <!-- Center Welcome Message -->
+    <div class="center-text">
+      <div id="welcomeMessage" class="message show">Welcome</div>
+      <div id="applyMessage" class="message">Apply Now</div>
+      <div class="sub-message">✨ Enroll now at Paragon University – Your future starts here! ✨</div>
+    </div>
+
+    <!-- Promo Text at Bottom -->
+    <div class="promo">
+      Paragon University offers world-class education with experienced faculty, modern technology, and industry partnerships. Join us to explore your full potential in Computer Science, Business, Engineering, and more!
+    </div>
+  </div>
+
+  <script>
+    // Switch from Welcome to Apply Now after 3 seconds
+    setTimeout(() => {
+      document.getElementById("welcomeMessage").classList.remove("show");
+      document.getElementById("applyMessage").classList.add("show");
+    }, 3000);
+  </script>
+</body>
+</html>
